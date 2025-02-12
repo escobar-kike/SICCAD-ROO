@@ -17,9 +17,6 @@ class UserSeeder extends Seeder
             'name' => 'Gari Amin Juan Jose',
             'email' => 'gariamin21@gmail.com',
             'password' => bcrypt('12345678')
-
         ]);
-
-        //User::factory(19)->create();
     }
 }

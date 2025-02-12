@@ -1,5 +1,3 @@
 <div>
-
     @livewire('users')
-
 </div>

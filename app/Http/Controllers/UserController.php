@@ -31,6 +31,8 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        User::create($request->input());
+        return redirect()->route('users.index')->with('message', 'Usaurio Creado');
     }
 
     /**

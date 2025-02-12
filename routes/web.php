@@ -33,12 +33,9 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-
-
 ])->group(function () {
     
-    
-    Route::resource('dictamenes', DictamenesController::class);
+        Route::resource('dictamenes', DictamenesController::class);
 
         Route::resource('users', UserController::class);
 
@@ -56,7 +53,6 @@ Route::middleware([
     
     
         Route::get('/dashboard', function () {
-            
             return redirect()->route('Cuerpos.index');
         })->name('dashboard');
     

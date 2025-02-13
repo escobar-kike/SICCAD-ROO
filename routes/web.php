@@ -25,9 +25,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
 
 Route::middleware([
     'auth:sanctum',
@@ -50,7 +47,10 @@ Route::middleware([
         Route::resource('cuerpos_dictamenes', CuerposDictamenesController::class);
 
         Route::resource('Imagenes', ImagenesController::class);
-    
+
+        Route::get('/', function (){
+            return redirect()->route('Cuerpos.index');
+        });
     
         Route::get('/dashboard', function () {
             return redirect()->route('Cuerpos.index');

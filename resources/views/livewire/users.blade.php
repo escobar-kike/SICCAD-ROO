@@ -23,7 +23,7 @@
                                 E-mail
                             </th>
                             <th scope="col" class="px-6 text-center py-3">
-                                Accion
+                                Acción
                             </th>
 
                         </tr>
@@ -37,7 +37,6 @@
                                     {{ $user->id }}
                                 </th>
                                 <td class="px-6 text-center py-4">
-                                    user
                                     {{ $user->name }}
                                 </td>
                                 <td class="px-6 text-center py-4">

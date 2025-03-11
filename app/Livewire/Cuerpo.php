@@ -98,7 +98,6 @@ class Cuerpo extends Component
 
         if (count($this->imagenes) > 0) {
             foreach ($this->imagenes as $key => $image) {
-
                 $image->store('public\Categoriafoto');
                 $imagen = new imagenes(); 
                 $imagen->rutaimg = $image->hashName();
@@ -106,7 +105,6 @@ class Cuerpo extends Component
                 $imagen->categoriasft_id = $this->dataimages[$key]["categoriasft_id"];
                 $imagen->cuerpos_id = $cuerpos->id;
                 $imagen->save();
-
             }
         }
 

@@ -4,7 +4,7 @@
             <h2 class="text-base/15 font-bold text-xl text-gray-900 dark:text-gray-200 leading-tight">
                 {{ __('Crear Nuevo Ususario') }}
             </h2>
-            <h2>hol</h2>
+            
         </x-slot>
         <form class="max-w-sm m-10 mx-auto" action="{{route('users.store')}}" method="POST">
             @csrf

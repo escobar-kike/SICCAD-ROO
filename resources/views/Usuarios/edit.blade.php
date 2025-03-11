@@ -5,37 +5,35 @@
                 {{ __('Actualizar Ususario') }}
             </h2>
         </x-slot>
-
-
         <form class="max-w-sm m-10 mx-auto">
             <div class="mb-5">
                 <label for="name" class="block mb-2 text-sm text-gray-900 font-bold dark:text-white">Nombre Completo
                 </label>
-                <input type="name" id="Nombre"
+                <input type="name" id="Nombre" value="{{$user->name}}"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                    required>
+                    >
             </div>
             <div class="mb-5">
                 <label for="email" class="block mb-2 text-sm font-bold text-gray-900 dark:text-white">Correo
                     Electronico
                 </label>
-                <input type="email" id="email"
+                <input type="email" id="email" value="{{$user->email}}"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                    placeholder="nombre@gmail.com" required>
+                    placeholder="nombre@gmail.com" >
             </div>
             <div class="mb-5">
                 <label for="password"
                     class="block mb-2 text-sm font-bold text-gray-900 dark:text-white">Contraseña</label>
-                <input type="password" id="password"
+                <input type="password" id="password" value="12345678"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                    required>
+                    >
             </div>
             <div class="mb-5">
                 <label for="repeat-password"
                     class="block mb-2 text-sm font-bold text-gray-900 dark:text-white">Confirmar Contraseña</label>
-                <input type="password" id="repeat-password"
+                <input type="password" id="repeat-password" value="12345678"
                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                    required>
+                    >
             </div>
 
             <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Roles</h3>

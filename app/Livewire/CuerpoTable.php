@@ -157,8 +157,6 @@ class CuerpoTable extends DataTableComponent
                         ->attributes(fn () => [
                             'class' => 'btn btn-gray'
                         ]),
-                        
-
                     ]),
             Column::make('ELIMINAR')
             ->label(fn ($row, Column $column) => view('livewire.delete')->with(["id" => $row->id, "description" => $row->name . " " . $row->lastname]))
@@ -167,7 +165,7 @@ class CuerpoTable extends DataTableComponent
     }
     public function confirmDestroy($id, $description)
     {
-        $this->content = '¿Estas seguro de querer eliminarlo ' . $description . '?';
+        $this->content = ' ¿Estas seguro de querer eliminarlo ' . $description . '?';
         $this->item_id = $id;
         $this->openModal = true;
     }
@@ -176,20 +174,20 @@ class CuerpoTable extends DataTableComponent
     public function doDelete(){
         //1.- seleccionar el cuerpo (saber el id, y tener la variable que tiene modelo)
         $cuerpos = Cuerpos::find($this->item_id);
-    //   2.- eliminar fotos  
+        //   2.- eliminar fotos  
         $cuerpos->imagenes()->each(function($photo) {
     
              Storage::disk("local")->delete("fotos/" . $photo->photoname);
              $photo->delete(); // <-- direct deletion
              });
-   // 3.- eliminar los dictamenes
+        // 3.- eliminar los dictamenes
         $cuerpos->cuerpos_dictamenes()->each(function($dictamen) {
         Storage::disk("local")->delete("fotos/" . $dictamen->dictamenes);
         $dictamen->delete(); // <-- direct deletion
              });
-    // borrar fotos fisicas
+        // borrar fotos fisicas
         $cuerpos->delete();
-             $this->reset();
+        $this->reset();
     }
     
 

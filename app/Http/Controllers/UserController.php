@@ -44,7 +44,7 @@ class UserController extends Controller
 
         $inputs["password"] = Hash::make($inputs["password"]); //encriptamos la contraseña
         User::create($inputs); //guardamos el usuario
-        return redirect()->route('users.index')->with('message', 'Usaurio Creado'); //regresamos al listado de usuarios
+        return redirect()->route('users.index')->with('message', 'Usuario Creado'); //regresamos al listado de usuarios
     }
 
     /**

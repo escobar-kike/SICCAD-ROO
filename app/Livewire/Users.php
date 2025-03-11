@@ -10,16 +10,14 @@ use Livewire\WithPagination;
 class Users extends Component
 {
     use WithPagination;
-
     public function render()
     {
         $users = User::paginate(10);
-        //dd($users);
         return view('livewire.users', compact('users'));
-
     }
 
-    public function delete($id){
-        //User::find($id)->delete();
+    public function delete($id)
+    {
+        User::find($id)->delete();
     }
 }

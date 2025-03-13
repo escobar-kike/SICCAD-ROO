@@ -142,7 +142,7 @@
                             photoPreview = e.target.result;
                         };
                         reader.readAsDataURL($refs.avatar.files[0]);"
-                    accept="image/*" name="avatar_new" id="avatar">
+                    accept="image/*"  id="avatar" wire:model="imgprincipal">
                
         
                 <div class=" m-6 mb-6">

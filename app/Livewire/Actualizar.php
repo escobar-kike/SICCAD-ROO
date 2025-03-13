@@ -9,6 +9,7 @@ use App\Models\dictamenes;
 use App\Models\tipos_de_hechos;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 class Actualizar extends Component
 {
@@ -22,6 +23,7 @@ class Actualizar extends Component
     public $dataimages;
     public $datarchivo;
     public $archipdf = [];
+    public $new_imagenes = [];
     public $imagenes = [];
 
     public $edit = [
@@ -90,6 +92,16 @@ class Actualizar extends Component
     public function update(){
         //dd($this->cuerpo);
         //$cuerpo = Cuerpos::find($this->posteditId);
+
+        if ($this->imgprincipal != null)
+        {
+            $this->imgprincipal->store('public/imgprincipal');
+            $this->edit['imgprincipal'] = $this->imgprincipal->hashName();
+            Storage::delete('app/public/imgprincipal/' . $this->cuerpo->imgprincipal);
+        }
+        else {
+            $this->edit['imgprincipal'] = $this->cuerpo->imgprincipal;
+        }
         $this->cuerpo->update([
 
             'CI' => $this->edit['CI'],
@@ -107,8 +119,13 @@ class Actualizar extends Component
             'imgprincipal' => $this->edit['imgprincipal']
         ]);
         
+        
+
         return redirect()->route('Cuerpos.index');
     }
+
+
+
     // 1 modificar la base de datos y agregar el nombre del pdf en el pivote
     //2 luego se debe de validar el registro del cuerpo nuevo a la hora de darle de alta 
     // 3 en editar checar que se pueda editar las fotos y dic.

@@ -27,8 +27,6 @@
                 <x-input type="text" id="first_name" wire:model="edit.CI" name="CI"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required />
-
-
             </div>
             <div>
                 <label for="first_name"
@@ -150,7 +148,7 @@
                 <div class=" m-6 mb-6">
                     <div class="grid gap-8 m-10 mb-6 md:grid-cols-1" x-show="! photoPreview">
                         @if ($edit['imgprincipal'])
-                            <img class="m-2 h-64" src="{{ asset('storage/Imgprincipal/' . $edit['imgprincipal']) }}">
+                            <img class="m-2 h-64" src="{{ asset('storage/imgprincipal/' . $edit['imgprincipal']) }}">
                         @endif
                     </div>
                     <div class="m-1" x-show="photoPreview" style="display: none;">

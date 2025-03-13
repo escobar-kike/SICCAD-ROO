@@ -92,7 +92,6 @@ class Actualizar extends Component
         //$cuerpo = Cuerpos::find($this->posteditId);
         $this->cuerpo->update([
 
-            
             'CI' => $this->edit['CI'],
             'identificado' => $this->edit['identificado'],
             'nombre' => $this->edit['nombre'],
@@ -107,12 +106,13 @@ class Actualizar extends Component
             'tiposdehechos_id' => $this->edit['tiposdehechos_id'],
             'imgprincipal' => $this->edit['imgprincipal']
         ]);
+        
         return redirect()->route('Cuerpos.index');
     }
     // 1 modificar la base de datos y agregar el nombre del pdf en el pivote
     //2 luego se debe de validar el registro del cuerpo nuevo a la hora de darle de alta 
     // 3 en editar checar que se pueda editar las fotos y dic.
-    // por ultimo eliminar.
+    // por ultimo eliminar .
     
     
 

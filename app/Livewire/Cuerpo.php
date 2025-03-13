@@ -79,6 +79,7 @@ class Cuerpo extends Component
         $cuerpos = new Cuerpos();
 
         $this->imgprincipal->store('public\imgprincipal');
+        
         $cuerpos->CI = $this->CI;
         $cuerpos->identificado = $this->identificado;
         $cuerpos->nombre = $this->nombre;
@@ -96,8 +97,10 @@ class Cuerpo extends Component
 
         //$this->reset();
 
-        if (count($this->imagenes) > 0) {
-            foreach ($this->imagenes as $key => $image) {
+        if (count($this->imagenes) > 0) 
+        {
+            foreach ($this->imagenes as $key => $image) 
+            {
                 $image->store('public\Categoriafoto');
                 $imagen = new imagenes(); 
                 $imagen->rutaimg = $image->hashName();
@@ -108,9 +111,10 @@ class Cuerpo extends Component
             }
         }
 
-        if (count($this->archipdf) > 0){
-            foreach ($this->archipdf as $key => $pdf){
-
+        if (count($this->archipdf) > 0)
+        {
+            foreach ($this->archipdf as $key => $pdf)
+            {
                 $pdf->store('public\Dictamenes');
                 $dictamen = new cuerpos_dictamenes();
                 $dictamen->rutapdf = $pdf->hashName();
@@ -119,7 +123,6 @@ class Cuerpo extends Component
                 $dictamen->save();
             }
         }
-
         return redirect()->route('Cuerpos.index');
     }
 

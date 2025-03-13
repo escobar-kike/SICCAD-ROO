@@ -55,9 +55,6 @@ Route::middleware([
         Route::get('/dashboard', function () {
             return redirect()->route('Cuerpos.index');
         })->name('dashboard');
-    
-  
-   
 });
 
 
